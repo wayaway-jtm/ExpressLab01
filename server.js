@@ -47,6 +47,7 @@ app.post('/cart-items', (req, res) => {
 app.put('/cart-items/:id', (req, res) => {
     cart.items[req.params.id] = new CartItem(req.params.id, req.body.product,
         req.body.price, req.body.quantity);
+    res.status(200).json(cart.items[req.params.id])
 });
 
 // DELETE /cart-items/:id
