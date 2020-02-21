@@ -42,9 +42,9 @@ app.post('/cart-items', (req, res) => {
     res.json(cart.getItem(cart.items.length - 1));
 });
 
-// POST /cart-items/:id
+// PUT /cart-items/:id
 //  add item to cart items w/ specified id
-app.post('/cart-items/:id', (req, res) => {
+app.put('/cart-items/:id', (req, res) => {
     cart.items[req.params.id] = new CartItem(req.params.id, req.body.product,
         req.body.price, req.body.quantity);
 });
